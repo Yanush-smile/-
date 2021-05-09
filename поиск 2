@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    cout << "Введите ваше слово" << endl;
+    string myWord;
+    getline(std::cin, myWord);
+
+    cout << "Введите то, что хотите найти в вашем слове" << endl;
+    string mySearch;
+    getline(std::cin, mySearch);
+    int i = 0;
+
+    for (i = myWord.find(mySearch, i++); i != string::npos; i = myWord.find(mySearch, i + 1))
+        cout << i << endl;
+}
